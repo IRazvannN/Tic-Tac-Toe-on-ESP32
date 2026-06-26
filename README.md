@@ -5,7 +5,7 @@ A self-contained state-machine based Tic-Tac-Toe game engine compiled for the ES
 ## Hardware Demonstration
 Below is an operational demonstration of the matrix updates, win state conditions, and drawing procedures running on the physical module:
 
-[![Watch the demonstration](https://img.youtube.com/vi/Hj2890d6KfE/maxresdefault.jpg)](https://youtu.be/Hj2890d6KfE)
+[![Watch the demonstration](https://img.youtube.com/vi/Hj2890d6KfE/0.jpg)](https://youtu.be/Hj2890d6KfE)
 
 ## Hardware Specifications
 - **Microcontroller:** ESP32-S3
@@ -19,17 +19,14 @@ Below is an operational demonstration of the matrix updates, win state condition
 ### State Validation Matrix
 The state machine monitors a 9-element 1D array to validate moves, toggle turns, and execute linear combination matches against pre-compiled multi-dimensional win coordinate sets:
 
-> **Grid Index Mapping:** > 1 | 2 | 3  
-> ---------  
-> 4 | 5 | 6  
-> ---------  
-> 7 | 8 | 9  
->  
-> **Border Coordinate Limits:** > col1: X=74, height=32  
-> col2: X=86, height=32  
-> row1: Y=10, width=32  
-> row2: Y=21, width=32  
-> Render Window bounding box: X=64 to X=96  
+<pre>
+ Grid Index Mapping:       Border Coordinate Limits:
+    1 | 2 | 3                 col1: X=74, height=32
+   -----------                col2: X=86, height=32
+    4 | 5 | 6                 row1: Y=10, width=32
+   -----------                row2: Y=21, width=32
+    7 | 8 | 9              Render Window bounding box: X=64 to X=96
+</pre>
 
 On every input frame, the active vector configurations are processed against eight unique index combinations covering horizontal rows, vertical columns, and diagonals.
 
